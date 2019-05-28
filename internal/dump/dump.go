@@ -1,6 +1,7 @@
-package util
+package dump
 
 import (
+    "fmt"
     "go.uber.org/zap"
     "github.com/davecgh/go-spew/spew"
 )
@@ -8,7 +9,7 @@ import (
 var Logger, _ = zap.NewDevelopment()
 
 func Dump(a ...interface {}) {
-    Logger.Info("This is info")
-    Logger.Warn("This is warn")
+    fmt.Println("This is InternalDump")
+    Logger.Info("This is internal info")
     spew.Dump(a...)
 }
